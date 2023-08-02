@@ -7,6 +7,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class DemoUtilsTest {
 
     DemoUtils demoUtils;
@@ -18,6 +19,7 @@ class DemoUtilsTest {
 
     @Test
     @DisplayName("Equals and Not Equals")
+    @Order(1)
     void testEqualsAndNotEquals() {
         assertEquals(6, demoUtils.add(2, 4), "2+4 must be 6");
         assertNotEquals(6, demoUtils.add(1, 9), "1+9 must not be 6");
@@ -25,6 +27,7 @@ class DemoUtilsTest {
 
     @Test
     @DisplayName("Null and Not Null")
+    @Order(0)
     void testNullAndNotNull() {
         String str1 = null;
         String str2 = "luv2code";
@@ -44,6 +47,7 @@ class DemoUtilsTest {
 
     @Test
     @DisplayName("True and False")
+    @Order(30)
     void testTrueFalse() {
         int gradeOne = 10;
         int gradeTwo = 5;
@@ -70,6 +74,7 @@ class DemoUtilsTest {
 
     @Test
     @DisplayName("Lines match")
+    @Order(50)
     void testLinesMatch() {
         List<String> theList = List.of("luv", "2", "code");
 
